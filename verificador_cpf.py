@@ -1,6 +1,7 @@
 # Aula de hoje, criar um verificador de CPF...
 # lógica https://atitudereflexiva.wordpress.com/2021/05/05/entenda-como-e-gerado-o-numero-do-cpf/
 # 333.466.900-91 (https://www.4devs.com.br/gerador_de_cpf)
+from rich import print
 
 "333.466.900-91"
 cpf_gerado = "333.466.900-91".replace(".", "").replace(
@@ -47,9 +48,10 @@ dgts = str(pri_dgt) + str(seg_dgt)
 comparador = cpf_gerado[9:]
 
 cpf = nove_dgt + dgts  # concatenando os 9 digitos com os 2 digitos do calculo
-print(cpf)
+
+print("Esse é o numero final do CPF:", cpf)
 
 if dgts == comparador:
-    print("CPF Válido")
+    print("CPF [green]Válido[/]")
 else:
-    print("CPF Inválido")
+    print("CPF [red]Inválido[/]")
